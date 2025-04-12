@@ -1,0 +1,23 @@
+{
+  "pokemon": {
+    "list": {
+      "title": "Pokemon List",
+      "search": "Search",
+      "filters": {
+        "name": "Name",
+        "id": "ID",
+        "type": "Type",
+        "species": "Species"
+      }
+    },
+    "details": {
+      "title": "Pokemon Details",
+      "moves": "Moves",
+      "evolution": "Evolution",
+      "games": "Games",
+      "stats": "Stats",
+      "types": "Types",
+      "back": "Back"
+    }
+  }
+}
