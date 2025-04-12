@@ -34,7 +34,7 @@ const getTypeColor = (type) => {
 </script>
 
 <template>
-  <div class="d-flex gap-2 flex-wrap">
+  <div class="d-flex justify-content-center gap-2 flex-wrap">
     <span
       v-for="type in types"
       :key="type.type.name"

@@ -41,6 +41,30 @@ onMounted(async () => {
     loading.value = false
   }
 })
+
+const getTypeColor = (type) => {
+  const colors = {
+    normal: '#A8A878',
+    fire: '#F08030',
+    water: '#6890F0',
+    electric: '#F8D030',
+    grass: '#78C850',
+    ice: '#98D8D8',
+    fighting: '#C03028',
+    poison: '#A040A0',
+    ground: '#E0C068',
+    flying: '#A890F0',
+    psychic: '#F85888',
+    bug: '#A8B820',
+    rock: '#B8A038',
+    ghost: '#705898',
+    dragon: '#7038F8',
+    dark: '#705848',
+    steel: '#B8B8D0',
+    fairy: '#EE99AC'
+  }
+  return colors[type] || '#777'
+}
 </script>
 
 <template>
@@ -66,6 +90,11 @@ onMounted(async () => {
                 class="img-fluid rounded main-image"
                 :alt="pokemon.name"
               />
+            </div>
+            <div 
+              class="circle"
+              :style="{ backgroundColor: getTypeColor(pokemon.types[0].type.name) }"
+            >
             </div>
           </div>
           <div class="col-md-6">
@@ -167,6 +196,7 @@ onMounted(async () => {
   border-radius: 1rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+  overflow: hidden;
 }
 
 .pokemon-image-container {
@@ -295,6 +325,16 @@ onMounted(async () => {
   max-height: 96px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.circle {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {
